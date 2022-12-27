@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:gravity="left|bottom"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginRight="5dp"
+            android:id="@+id/fid_avatar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_baseline_person_24"/>
+
+        <TextView
+            android:id="@+id/fid_content"
+            android:maxWidth="300dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textSize="18sp"
+            android:paddingVertical="10dp"
+            android:paddingLeft="28dp"
+            android:background="@drawable/dialog_r"
+            android:text="fe大闹地府大闹地府大闹地Gravity (Gr
+    avity.CENTER); 备注： android :gravity和 android :layout_gravity
+    的区别在于前者对控件内部操 Android Studio安装
+    和使用教程 (全文图解) 最新发布 weixin_47614014的博客 1万+ 我
+    们先进入安装的SDK目录府大闹地府大闹地府
+            hi哦"/>
+
+    </LinearLayout>
+
+</LinearLayout>

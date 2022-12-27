@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <LinearLayout
+        android:id="@+id/topbar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="usingForfillBlank"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tx_tip"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginVertical="5dp"
+            android:layout_weight="6"
+            android:autoSizeTextType="none"
+            android:text="微信"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/img_search"
+            android:layout_width="35dp"
+            android:layout_height="40dp"
+            android:layout_marginVertical="5dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_search_24" />
+
+        <ImageView
+            android:id="@+id/img_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginVertical="5dp"
+            android:src="@drawable/ic_baseline_add_24" />
+    </LinearLayout>
+        <fragment
+            android:id="@+id/fragment_message"
+            android:name="com.example.wechatdemo.fragment.MessageFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topbar"
+            tools:layout="@layout/fragment_message" />
+
+        <fragment
+            android:id="@+id/fragment_friends"
+            android:name="com.example.wechatdemo.fragment.FriendsFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topbar" />
+
+        <fragment
+            android:id="@+id/fragment_home"
+            android:name="com.example.wechatdemo.fragment.HomeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topbar" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:background="?android:attr/windowBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navigation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

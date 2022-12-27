@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="10dp"
+    android:paddingVertical="5dp">
+    <ImageView
+        android:id="@+id/mlist_avatar"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:scaleType="centerInside"
+    android:src="@drawable/ic_baseline_person_24"/>
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_weight="8"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/mlist_username"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textStyle="bold"
+            android:gravity="left|center"
+            android:textSize="17sp"
+            android:text="姓名"/>
+        <TextView
+            android:id="@+id/mlist_msg"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            android:textSize="15sp"
+            android:text="消息内容。。。。dsf/.."/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/mlist_datetime"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:textDirection="rtl"
+        android:paddingTop="10dp"
+        android:gravity="right|top"
+        android:textSize="17sp"
+        android:text="下午14:45"/>
+
+</LinearLayout>
