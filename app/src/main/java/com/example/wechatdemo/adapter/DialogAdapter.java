@@ -3,97 +3,97 @@ package com.example.wechatdemo.adapter;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.wechatdemo.R;
 import com.example.wechatdemo.bean.Dialog;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class DialogAdapter extends BaseAdapter {
+public class DialogAdapter extends RecyclerView.Adapter<DialogAdapter.ViewHolder> {
     private List<Dialog> dialogList;
     private Context context;
+    private String user_number;
 
-    public DialogAdapter(Context context,List<Dialog> dialogList) {
-        this.dialogList = dialogList;
-        this.context = context;
-    }
-
-    @Override
-    public int getCount() {
-        return dialogList.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return dialogList.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
+    public DialogAdapter (Context context,List<Dialog>dialogList,String user_number){
+        this.context=context;
+        this.dialogList=dialogList;
+        this.user_number=user_number;
     }
 
 
+    @NonNull
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        final Dialog dialog=dialogList.get(position);
-        View view;
-        ViewHolder holder;
-        if(convertView==null){
-            if (dialog.getType()==0){
-                view = LayoutInflater.from(context).inflate(R.layout.chat_user_item,null);
-                /* 缓存 */
-                holder = new ViewHolder();
-                holder.content=view.findViewById(R.id.usr_content);
-                holder.avatar = view.findViewById(R.id.usr_avatar);
-                view.setTag(holder);
-            }else{
-                view = LayoutInflater.from(context).inflate(R.layout.chat_friend_item,null);
-                /* 缓存 */
-                holder = new ViewHolder();
-                holder.content=view.findViewById(R.id.fid_content);
-                holder.avatar = view.findViewById(R.id.fid_avatar);
-                view.setTag(holder);
-            }
-        }else {
-            view =convertView;
-            holder= (ViewHolder) view.getTag();
-        }
-        holder.content.setText(dialog.getContent());
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_item, parent, false);
+        return new ViewHolder(view);
+    }
 
-        if (dialog.getType()==0){
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        System.out.println("dialsd"+dialogList);
+        if (dialogList.size()>0){
+        Dialog dialog = dialogList.get(position);
+            System.out.println(dialog);
+        if (dialog.getFrom().equals(user_number)) {
+            holder.user_item.setVisibility(View.VISIBLE);
+            holder.fid_item.setVisibility(View.GONE);
+            holder.u_content.setText(dialog.getContent());
             String base64 = dialog.getAvatar();
-            if (base64.equals("")){
-                holder.avatar.setImageResource(R.drawable.default_ava);
-            }else{
+            if (base64.equals("")) {
+                holder.u_avatar.setImageResource(R.drawable.default_ava);
+            } else {
                 byte[] decodedString = Base64.decode(base64.split(",")[1], Base64.DEFAULT);
                 Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-                holder.avatar.setImageBitmap(decodedByte);
+                holder.u_avatar.setImageBitmap(decodedByte);
             }
-        }else if (dialog.getType()==1){
+        }else {
+            holder.user_item.setVisibility(View.GONE);
+            holder.fid_item.setVisibility(View.VISIBLE);
+            holder.f_content.setText(dialog.getContent());
             Glide.with(context)
                     .load(dialog.getAvatar())
                     .placeholder(R.drawable.default_ava)
                     .error(R.drawable.default_ava)
-                    .into(holder.avatar);
+                    .into(holder.f_avatar);
         }
-
-        return view;
+    }
     }
 
-    private class ViewHolder {
-        TextView content;
-        ImageView avatar;
+    @Override
+    public int getItemCount() {
+        return dialogList.size();
     }
+
+    static class ViewHolder extends RecyclerView.ViewHolder {
+        LinearLayout user_item;
+        LinearLayout fid_item;
+        TextView u_content;
+        TextView f_content;
+        ImageView u_avatar;
+        ImageView f_avatar;
+
+        public ViewHolder(View view) {
+            super(view);
+            user_item = view.findViewById(R.id.user_chat);
+            fid_item = view.findViewById(R.id.fid_chat);
+            u_content=view.findViewById(R.id.usr_content);
+            f_content=view.findViewById(R.id.fid_content);
+            u_avatar=view.findViewById(R.id.usr_avatar);
+            f_avatar=view.findViewById(R.id.fid_avatar);
+        }
+    }
+
 }

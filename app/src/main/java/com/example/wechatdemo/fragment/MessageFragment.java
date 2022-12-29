@@ -84,6 +84,8 @@ public class MessageFragment extends Fragment {
     }
 
 
+    
+
     public void doGetStulist(){
         SharedPreferences uinfo= getActivity().getSharedPreferences("uinfo", Context.MODE_PRIVATE);
         System.out.println(number+"token");

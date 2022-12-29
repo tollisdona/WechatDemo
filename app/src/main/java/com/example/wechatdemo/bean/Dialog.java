@@ -1,10 +1,8 @@
 package com.example.wechatdemo.bean;
 
-import org.w3c.dom.Text;
-
 public class Dialog {
     private String avatar;
-    private int type;
+    private String from;
     private String content;
 
     public String getAvatar() {
@@ -15,12 +13,12 @@ public class Dialog {
         this.avatar = avatar;
     }
 
-    public int getType() {
-        return type;
+    public String getFrom() {
+        return from;
     }
 
-    public void setType(int type) {
-        this.type = type;
+    public void setFrom(String from) {
+        this.from = from;
     }
 
     public String getContent() {
@@ -35,7 +33,7 @@ public class Dialog {
     public String toString() {
         return "Dialog{" +
                 "avatar=" + avatar +
-                ", type=" + type +
+                ", from=" + from +
                 ", content='" + content + '\'' +
                 '}';
     }

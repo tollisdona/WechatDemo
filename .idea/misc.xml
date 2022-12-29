@@ -10,22 +10,24 @@
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/drawable/button_style2.xml" value="0.1765" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1975" />
+        <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/drawable/ic_baseline_keyboard_voice_24.xml" value="0.2055" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.2" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/drawable/ic_baseline_vpn_key_24.xml" value="0.2" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/drawable/ic_temp.xml" value="0.127" />
-        <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/activity_chat.xml" value="0.16" />
+        <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/activity_chat.xml" value="0.1" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/activity_lanuch.xml" value="0.17527173913043478" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/activity_launch.xml" value="0.2" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/activity_login.xml" value="0.25364583333333335" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/activity_register.xml" value="0.1" />
-        <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/chat_friend_item.xml" value="0.264" />
+        <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/chat_friend_item.xml" value="0.1" />
+        <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/chat_item.xml" value="0.16304347826086957" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/chat_list_item.xml" value="0.25364583333333335" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/chat_receiver_item.xml" value="0.2526041666666667" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/chat_sender_item.xml" value="0.25364583333333335" />
-        <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/chat_user_item.xml" value="0.2" />
+        <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/chat_user_item.xml" value="0.1" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/content_main.xml" value="0.17527173913043478" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/fragment_first.xml" value="0.17527173913043478" />
         <entry key="..\:/Codes/Android/WechatDemo/app/src/main/res/layout/fragment_friends.xml" value="0.264" />

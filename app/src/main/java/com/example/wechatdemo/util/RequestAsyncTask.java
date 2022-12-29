@@ -69,7 +69,6 @@ public class RequestAsyncTask extends AsyncTask<String,Void,String> {
         MyHttpUtils myHttpUtils = new MyHttpUtils();
         try {
             String result = myHttpUtils.request(url,json,method);
-            System.out.println("1");
             return result;
         } catch (IOException e) {
             e.printStackTrace();
